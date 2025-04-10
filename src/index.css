@@ -493,3 +493,15 @@ a:hover {
 .profile-pic:hover {
   transform: scale(1.05);
 }
+
+.location-contact {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.location-contact i {
+  margin-right: 8px;
+  color: #aaa;
+}

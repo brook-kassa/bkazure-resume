@@ -1,0 +1,107 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountName": {
+      "type": "string",
+      "defaultValue": "bkcrcstorageacc",
+      "metadata": {
+        "description": "Name of the storage account"
+      }
+    },
+    "cdnProfileName": {
+      "type": "string",
+      "defaultValue": "MyCDNProfile",
+      "metadata": {
+        "description": "Name of the CDN profile"
+      }
+    },
+    "cdnEndpointName": {
+      "type": "string",
+      "defaultValue": "brookkassa",
+      "metadata": {
+        "description": "Name of the CDN endpoint"
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus",
+      "metadata": {
+        "description": "Azure region for resources"
+      }
+    }
+  },
+  "resources": [
+    // Storage Account with Static Website
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-01-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "accessTier": "Hot",
+        "supportsHttpsTrafficOnly": true
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/staticWebsites",
+      "apiVersion": "2023-01-01",
+      "name": "[concat(parameters('storageAccountName'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+      ],
+      "properties": {
+        "indexDocument": "index.html",
+        "errorDocument404Path": "error.html"
+      }
+    },
+    // Azure CDN Profile
+    {
+      "type": "Microsoft.Cdn/profiles",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('cdnProfileName')]",
+      "location": "global",
+      "sku": {
+        "name": "Standard_Microsoft"
+      }
+    },
+    // CDN Endpoint
+    {
+      "type": "Microsoft.Cdn/profiles/endpoints",
+      "apiVersion": "2023-05-01",
+      "name": "[concat(parameters('cdnProfileName'), '/', parameters('brookkassa'))]",
+      "location": "global",
+      "dependsOn": [
+        "[resourceId('Microsoft.Cdn/profiles', parameters('cdnProfileName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+      ],
+      "properties": {
+        "originHostHeader": "[concat(parameters('storageAccountName'), 'bkcrcstorageacc.z13.web.core.windows.net')]",
+        "origins": [
+          {
+            "name": "storage-origin",
+            "hostName": "[concat(parameters('storageAccountName'), 'bkcrcstorageacc.z13.web.core.windows.net')]",
+            "httpPort": 80,
+            "httpsPort": 443
+          }
+        ],
+        "isHttpAllowed": false, // Force HTTPS
+        "optimizationType": "GeneralWebDelivery"
+      }
+    }
+  ],
+  "outputs": {
+    "staticWebsiteUrl": {
+      "type": "string",
+      "value": "[concat('https://', parameters('storageAccountName'), 'bkcrcstorageacc.z13.web.core.windows.net')]"
+    },
+    "cdnEndpointUrl": {
+      "type": "string",
+      "value": "[concat('https://', parameters('brookkassa'), '.azureedge.net')]"
+    }
+  }
+}

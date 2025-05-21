@@ -1,20 +1,10 @@
 import sys
-from types import SimpleNamespace
-from VisitorCounter import main
+import os
 
-class MockHttpRequest:
-    def __init__(self):
-        self.method = "GET"
-        self.params = {}
-        self.headers = {}
-        self.route_params = {}
-        self.body = None
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'VisitorCounter'))
 
-    def get_json(self):
-        return {}
+import __init__ as function_code  
 
-req = MockHttpRequest()
-
-for i in range(3):
-    response = main(req)
+for _ in range(3):
+    response = function_code.main(None)
     print(response.get_body().decode())

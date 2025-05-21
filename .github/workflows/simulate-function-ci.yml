@@ -19,17 +19,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Set up Node.js (required for Azure Functions Core Tools)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install Azure Functions Core Tools and dependencies
+      - name: Install Python dependencies
         run: |
-          npm install -g azure-functions-core-tools@4 --unsafe-perm true
           pip install -r requirements.txt
 
-      - name: Simulate Azure Function locally
+      - name: Run Visitor Counter simulation
         run: |
-          echo "Simulating Azure Function App locally"
-          func start --worker-runtime python --verbose --timeout 15
+          echo "Simulating Visitor Counter logic using test script"
+          python test_counter.py

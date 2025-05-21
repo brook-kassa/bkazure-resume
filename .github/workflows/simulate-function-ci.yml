@@ -32,4 +32,4 @@ jobs:
       - name: Simulate Azure Function locally
         run: |
           echo "Simulating Azure Function App locally"
-          func start --worker-runetime python --verbose --timeout 15
+          func start --worker-runtime python --verbose --timeout 15

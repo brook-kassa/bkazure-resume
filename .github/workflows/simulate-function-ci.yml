@@ -3,28 +3,33 @@ name: Deploy Resume Infrastructure
 on:
   push:
     branches: [ "main" ]
-  pull_request:  
+  pull_request:
     branches: [ "main" ]
 
 jobs:
   simulate:
-    runs-on: ubuntu-latest
-       
+    runs-on: windows-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Install Azure Functions Core Tools and dependencies
-      run: |
-        npm install -g azure-functions-core-tools@4 --unsafe-perm true
-        pip install -r requirements.txt
+      - name: Set up Node.js (required for Azure Functions Core Tools)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-    - name: Simulate function run
-      run: |
-       echo "Simulationg Azure Function App locally"
-       func start --verbose --timeout 15
+      - name: Install Azure Functions Core Tools and dependencies
+        run: |
+          npm install -g azure-functions-core-tools@4 --unsafe-perm true
+          pip install -r requirements.txt
+
+      - name: Simulate Azure Function locally
+        run: |
+          echo "Simulating Azure Function App locally"
+          func start --verbose --timeout 15

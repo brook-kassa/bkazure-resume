@@ -1,0 +1,30 @@
+name: Deploy Resume Infrastructure
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:  
+    branches: [ "main" ]
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+       
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Azure Functions Core Tools and dependencies
+      run: |
+        npm install -g azure-functions-core-tools@4 --unsafe-perm true
+        pip install -r requirements.txt
+
+    - name: Simulate function run
+      run: |
+       echo "Simulationg Azure Function App locally"
+       func start --verbose --timeout 15

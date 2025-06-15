@@ -1,76 +1,45 @@
-# Getting Started with Create React App
+Welcome! This is my web app resume attempt of the Cloud Resume Challenge using Microsoft Azure and modern DevOps & frontend technologies. This project leverages infrastructure-as-code, CI/CD pipelines, serverless computing, and static site hosting all in one full-stack cloud application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site: www.brookkassa.com
+[GitHub Repository](https://github.com/brook-kassa/bkazure-resume)
 
-## Available Scripts
+What I Built.. This project features:
 
-In the project directory, you can run:
+✅ A responsive static resume site built with HTML, CSS, JavaScript, and React.
 
-### `npm start`
+⚙️ Automated CI/CD deployment pipeline using GitHub Actions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🖱️ A live visitor counter powered by an Azure Function and Cosmos DB (serverless).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔐 Configured custom domain and HTTPS using Cloudflare.
 
-### `npm test`
+📦 Infrastructure managed with Terraform (IaC).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🧪 Tested locally and deployed via Azure CLI and Terraform plans.
 
-### `npm run build`
+☁️ Hosted on Azure Static Web Apps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📈 Architecture Diagram
+Here’s an overview of the cloud architecture and flow for this project:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![BKCRC Flow](https://github.com/user-attachments/assets/278a0824-bbfe-475c-8965-46da9849a4af)
 
 
+Technologies Used:
+Area	Tool / Tech
+Frontend	React, HTML, CSS, JavaScript
+Hosting	Azure Static Web Apps
+Serverless API	Azure Functions (Python)
+Database	Azure Cosmos DB (Serverless, NoSQL)
+IaC	Terraform
+CI/CD	GitHub Actions
+DNS/SSL	Cloudflare
+Source Control	Git & GitHub
 
-TODO
-******************************************
-- create a custom error.html page ?
+
+This challenge has been a great opportunity to package my experience into a neat website, essentially my professional portfolio. I had fun! I'm grateful the challegne allowed me to improve my Python, Bash, Terraform, and GitHub Actions scripting skills. Troubleshooting through Azure Function deployments, resource permission issues, and configuring persistent backend logic taught me more than any course could. I also gained a much deeper appreciation for how interconnected cloud services can be. If you're interested, I'd be happy to break down the project for you in more detail. 
+
+Please reach out!
+
+E: brookassa4@gmail.com
+LinkedIn: https://www.linkedin.com/in/brook-kassa-2583a0192/

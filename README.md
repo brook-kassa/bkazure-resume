@@ -4,6 +4,7 @@ Live Site: www.brookkassa.com
 [GitHub Repository](https://github.com/brook-kassa/bkazure-resume)
 
 & Check out the Blog! --> (https://brook-kassa.hashnode.dev/?source=top_nav_blog_home)
+
 What I Built.. This project features:
 
 ✅ A responsive static resume site built with HTML, CSS, JavaScript, and React.

@@ -521,4 +521,10 @@ a:hover {
   border: 1px solid #333;
   border-radius: 6px;
 }
+.links-row .nav-button:hover {
+  transform: translateY(-3px);
+  background-color: #3a3a3b;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 

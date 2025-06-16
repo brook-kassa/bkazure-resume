@@ -5,23 +5,23 @@ Live Site: www.brookkassa.com
 
 Check out the Blog! --> https://brook-kassa.hashnode.dev/?source=top_nav_blog_home
 
-What I Built.. This project features:
+This project features:
 
-✅ A responsive static resume site built with HTML, CSS, JavaScript, and React.
+- A responsive static resume site built with HTML, CSS, JavaScript, and React.
 
-⚙️ Automated CI/CD deployment pipeline using GitHub Actions.
+- Automated CI/CD deployment pipeline using GitHub Actions.
 
-🖱️ A live visitor counter powered by an Azure Function and Cosmos DB (serverless).
+- A live visitor counter powered by an Azure Function and Cosmos DB (serverless).
 
-🔐 Configured custom domain and HTTPS using Cloudflare.
+- Configured custom domain and HTTPS using Cloudflare.
 
-📦 Infrastructure managed with Terraform (IaC).
+- Infrastructure managed with Terraform (IaC).
 
-🧪 Tested locally and deployed via Azure CLI and Terraform plans.
+- Tested locally and deployed via Azure CLI and Terraform plans.
 
-☁️ Hosted on Azure Static Web Apps.
+- Hosted on Azure Static Web Apps.
 
-📈 Architecture Diagram
+- Architecture Diagram
 Here’s an overview of the cloud architecture and flow for this project:
 
 ![BKCRC Flow](https://github.com/user-attachments/assets/278a0824-bbfe-475c-8965-46da9849a4af)

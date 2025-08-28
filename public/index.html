@@ -21,31 +21,64 @@
             margin: 0 auto;
             max-width: 1200px;
         }
-        
         .grid-item {
             flex: 0 0 calc(33.333% - 40px);
             box-sizing: border-box;
             margin-bottom: 20px;
         }
-        
         .centered-row {
             display: flex;
             justify-content: center;
             width: 100%;
             gap: 20px;
         }
-        
         .centered-row .grid-item {
             flex: 0 0 calc(33.333% - 40px);
             max-width: calc(33.333% - 40px);
         }
-        
         .logo-container img {
             height: 40px;
             width: auto;
             margin: 5px;
         }
-        
+
+        /* ---- New: Experience section styles ---- */
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 14px;
+        }
+        .experience-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #121212;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+        .experience-item a {
+            font-weight: 600;
+            text-decoration: none;
+            color: #21d07a;
+        }
+        .inline-logo {
+            height: 24px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 6px;
+            background: #0c0c0c;
+        }
+        .pill-note {
+            font-size: 12px;
+            opacity: .8;
+        }
+
+        /* nav buttons fix for long labels on mobile */
+        .nav-buttons .nav-button { white-space: nowrap; }
+
         @media (max-width: 900px) {
             .grid-item,
             .centered-row .grid-item {
@@ -53,7 +86,6 @@
                 max-width: calc(50% - 40px);
             }
         }
-        
         @media (max-width: 600px) {
             .grid-item, 
             .centered-row .grid-item {
@@ -66,338 +98,350 @@
 <body>
   <div class="container">
     <header class="header">
-  <div class="profile-pic-container">
-    <img src="https://i.ibb.co/v6DqP7Ts/IMG-3983-1.jpg" alt="Brook Kassa" class="profile-pic">
-  </div>
-  <h1>Brook Kassa</h1>
-  <h2>Cloud Engineer</h2>
-  <p>Building Cloud Solutions That Empower Communities</p>
-  <p class="location-contact">
-    <i class="fas fa-map-marker-alt"></i> Philadelphia, Pennsylvania<br>
-    <i class="fas fa-phone"></i> <a href="tel:7633000767">763-300-0767</a>
-  </p>
+      <div class="profile-pic-container">
+        <img src="https://i.ibb.co/v6DqP7Ts/IMG-3983-1.jpg" alt="Brook Kassa" class="profile-pic">
+      </div>
+      <h1>Brook Kassa</h1>
+      <h2>Cloud Engineer</h2>
+      <p>Building Cloud Solutions That Empower Communities</p>
+      <p class="location-contact">
+        <i class="fas fa-map-marker-alt"></i> Philadelphia, Pennsylvania<br>
+        <i class="fas fa-phone"></i> <a href="tel:7633000767">763-300-0767</a>
+      </p>
 
-  <div class="links-row">
-    <a href="https://brookkassa.blob.core.windows.net/public-resume/BROOK_KASSA_RESUME.pdf" target="_blank" class="nav-button">
-      <img src="pdf_icon_recolored.png"
-       alt="Resume"
-       style="height: 20px; vertical-align: middle; margin-right: 8px;">
-      Resume
-    </a>
-    <a href="https://brook-kassa.hashnode.dev" target="_blank" class="nav-button">
-      <img src="./hashnode.png"
-       alt="Hashnode"
-       style="height: 20px; vertical-align: middle; margin-right: 8px;">
-      Blog
-    </a>
-  </div>
-
-  <div class="personal-info">
-    <a href="https://github.com/brook-kassa" target="_blank" class="info-item">
-      <i class="fab fa-github info-icon"></i>
-    </a>
-    <div class="tooltip info-item" onclick="copyEmail()">
-      <i class="fas fa-envelope info-icon"></i>
-      <span class="tooltiptext">Click to copy</span>
-    </div>
-    <a href="https://www.linkedin.com/in/brook-kassa-2583a0192/" target="_blank" class="info-item">
-      <i class="fab fa-linkedin info-icon"></i>
-    </a>
-  </div>
-
-  <div class="visitor-count">
-    <span id="visitor-counter">Loading visitor count...</span>
-  </div>
-</header>
-
-
-      <div class="nav-buttons">
-          <div class="top-row">
-              <a href="#Skills" class="nav-button"><i class="fas fa-code"></i> Skills</a>
-              <a href="#Certifications" class="nav-button"><i class="fas fa-certificate"></i> Certifications</a>
-              <a href="#Coursework" class="nav-button"><i class="fas fa-graduation-cap"></i> Coursework</a>
-              <a href="#Projects" class="nav-button"><i class="fas fa-briefcase"></i>Projects</a>
-          </div>
-          <div class="bottom-row">
-              <a href="#Education" class="nav-button"><i class="fas fa-university"></i> Education</a>
-              <a href="#Extracurriculars" class="nav-button"><i class="fas fa-users"></i> Extracurriculars</a>
-          </div>
+      <div class="links-row">
+        <a href="https://brookkassa.blob.core.windows.net/public-resume/BROOK_KASSA_RESUME.pdf" target="_blank" class="nav-button">
+          <img src="pdf_icon_recolored.png" alt="Resume" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+          Resume
+        </a>
+        <a href="https://brook-kassa.hashnode.dev" target="_blank" class="nav-button">
+          <img src="./hashnode.png" alt="Hashnode" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+          Blog
+        </a>
       </div>
 
-      <section id="Skills" class="section">
-          <div class="section-header">
-              <i class="fas fa-code"></i>
-              <h2>Technical Skills</h2>
+      <div class="personal-info">
+        <a href="https://github.com/brook-kassa" target="_blank" class="info-item">
+          <i class="fab fa-github info-icon"></i>
+        </a>
+        <div class="tooltip info-item" onclick="copyEmail()">
+          <i class="fas fa-envelope info-icon"></i>
+          <span class="tooltiptext">Click to copy</span>
+        </div>
+        <a href="https://www.linkedin.com/in/brook-kassa-2583a0192/" target="_blank" class="info-item">
+          <i class="fab fa-linkedin info-icon"></i>
+        </a>
+      </div>
+
+      <div class="visitor-count">
+        <span id="visitor-counter">Loading visitor count...</span>
+      </div>
+    </header>
+
+    <div class="nav-buttons">
+      <div class="top-row">
+          <a href="#Skills" class="nav-button"><i class="fas fa-code"></i> Skills</a>
+          <a href="#Certifications" class="nav-button"><i class="fas fa-certificate"></i> Certifications</a>
+          <a href="#Experience" class="nav-button"><i class="fas fa-user-tie"></i> Experience</a>
+          <a href="#Projects" class="nav-button"><i class="fas fa-briefcase"></i> Projects</a>
+      </div>
+      <div class="bottom-row">
+          <a href="#Coursework" class="nav-button"><i class="fas fa-graduation-cap"></i> Coursework</a>
+          <a href="#Education" class="nav-button"><i class="fas fa-university"></i> Education</a>
+          <a href="#Extracurriculars" class="nav-button"><i class="fas fa-users"></i> Community Involvement</a>
+      </div>
+    </div>
+
+    <section id="Skills" class="section">
+      <div class="section-header">
+          <i class="fas fa-code"></i>
+          <h2>Technical Skills</h2>
+      </div>
+      <div class="skills-container">
+          <div class="skills-list">
+              <ul>
+                  <li><strong>Cloud Technologies:</strong> Azure, Docker, Terraform</li>
+                  <li><strong>Programming:</strong> Python, Bash, Java</li>
+                  <li><strong>Tools:</strong> Git/GitHub, Packet Tracer, Wireshark</li>
+                  <li><strong>Systems:</strong> Computer Networking, Cybersecurity</li>
+              </ul>
           </div>
-          <div class="skills-container">
-              <div class="skills-list">
-                  <ul>
-                      <li><strong>Cloud Technologies:</strong> Azure, Docker, Terraform</li>
-                      <li><strong>Programming:</strong> Python, Bash, Java</li>
-                      <li><strong>Tools:</strong> Git/Github, Packet Tracing, Wireshark</li>
-                      <li><strong>Systems:</strong> Computer Networking, Cybersecurity</li>
-                  </ul>
-              </div>
-              <div class="skills-logos">
-                <div class="skills-logos">
-                  <img src="https://swimburger.net/media/ppnn3pcl/azure.png" alt="Azure" class="logo-">
-                  <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker" class="logo-top">
-                  <img src="./terraform.png" alt="Terraform" class="logo-">
-                  
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python" class="logo-">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="JavaScript" class="logo-middle">
-                  <img src="./java.png" alt="Java" class="logo-">
-                  
-                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-language-pack-logos-icons-1175208.png?f=webp&w=256" alt="JavaScript" class="logo-">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Bash" class="logo-bottom">
-                  <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/141_Git_logo_logos-512.png" alt="Git" class="logo-">
-              </div>
-              </div>
-          </div>
-      </section>
-
-      <section id="Certifications" class="section">
-          <div class="section-header">
-              <i class="fas fa-certificate"></i>
-              <h2>Certifications</h2>
-          </div>
-          <ul>
-              <li>
-                  <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-fundamentals?tab=credentials-tab"
-                  >Microsoft Certified: Azure Fundamentals</a>
-              </li>
-              <li>
-                  <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab&source=docs"
-                  >Microsoft Certified: Security, Compliance, and Identity Fundamentals</a>
-              </li>
-              <li>
-                <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-administrator?tab=credentials-tab"
-                >Microsoft Certified: Azure Administrator Associate</a>
-              </li>
-              <li>
-                <a href="https://www.credly.com/badges/db403701-4443-476a-b475-12596123d44c/public_url"
-                >AWS Certified: Cloud Practitioner</a>
-              </li>
-              <li>
-                  <a href="https://www.credly.com/badges/59dba859-a4ca-4583-b3a8-94103cb4111b"
-                  >Cisco Certified Support Technician</a>
-              </li>
-          </ul>
-          <div class="certification-images">
-              <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-fundamentals?tab=credentials-tab" target="_blank">
-                  <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Microsoft Azure Fundamentals Certification">
-              </a>
-              <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab&source=docs" target="_blank">
-                <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="Microsoft Certified: Security, Compliance, and Identity Fundamentals">
-              </a>
-              <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-administrator?tab=credentials-tab" target="_blank">
-                <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg?branch=main" alt="Microsoft Azure Fundamentals Certification">
-              </a>
-              <a href="https://www.credly.com/badges/db403701-4443-476a-b475-12596123d44c/public_url" target="_blank">
-                <img src="./awscp.png" alt="AWS Certified: Cloud Practitioner">
-              </a>
-              <a href="https://www.credly.com/earner/earned/badge/59dba859-a4ca-4583-b3a8-94103cb4111b" target="_blank">
-                <img src="./ccst.png" alt="Cisco Certified Support Technician">
-            </a>
-          </div>
-          
-      </section>
-
-      <section id="Projects" class="section">
-          <div class="section-header">
-              <i class="fas fa-briefcase"></i>
-              <h2>Projects</h2>
-          </div>
-          <ul>
-              <li>
-                  <a href="https://github.com/brook-kassa/YegnaNet"
-                  >YegnaNet - In Progress</a>
-                  <br /><em>Crowdsourced, Wi-Fi Hotspot Heatmap</em>
-              </li>            
-              <li>
-                  <a href="https://github.com/NickResto/CSC468_Project"
-                  >Reel Picks - Cloud Computing Project</a>
-                  <br /><em>Collaborative movie recommendation web app</em>
-              </li>
-              <li>
-                <a href="https://github.com/brook-kassa/bkazure-resume"
-                >Cloud Resume Challenge</a>
-                <br /><em>Azure hosted webapp resume</em>
-             </li>
-            <li>
-                <a href="https://www.netacad.com/profile?tab=badges"
-                >Networking Lab Projects</a>
-                <br /><em>Simulated real-world networks in Cisco Packet Tracer with switches, routers, VLANs, and subnets</em>
-                <em>Configure DHCP, DNS, and routing protocols while applying IPv4/IPv6 subnetting strategies</em>
-             </li>
-          </ul>
-      </section>
-  
-      <section id="Coursework" class="section">
-          <div class="section-header">
-              <i class="fas fa-graduation-cap"></i>
-              <h2>Relevant Coursework</h2>
-          </div>
-          <div class="grid-container">             
-              <div class="grid-item">
-                  <h5><i class="fas fa-cloud"></i> Cloud Computing</h5>
-                  <ul>
-                      <li>Developed movie recommendation app</li>
-                      <li>Docker/Docker Compose implementation</li>
-                      <li>Virtualization and containerization</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-3521676-2945120.png" alt="MongoDB Leaf">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
-                      <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker">
-                  </div>
-              </div>
-
-              <div class="grid-item">
-                  <h5><i class="fas fa-laptop-code"></i> Software Engineering</h5>
-                  <ul>
-                      <li>OOP principles and design patterns</li>
-                      <li>Data Structures and Algorithms</li>
-                      <li>Project planning and testing</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="./java.png" alt="Java">
-                  </div>
-              </div>
-
-              <div class="grid-item">
-                  <h5><i class="fas fa-shield-alt"></i> Cybersecurity</h5>
-                  <ul>
-                      <li>Network security fundamentals</li>
-                      <li>Ethical hacking techniques</li>
-                      <li>Firewall configuration</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="Bash">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png" alt="C">
-                  </div>
-              </div>
-
-              <!-- Second row of 3 items -->
-              <div class="grid-item">
-                  <h5><i class="fas fa-network-wired"></i> Networking</h5>
-                  <ul>
-                      <li>Cisco Packet Tracer</li>
-                      <li>Wireshark packet analysis</li>
-                      <li>Network topologies</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Wireshark_icon_new.png" alt="Wireshark">
-                      <img src="https://hurbad.com/wp-content/uploads/2021/12/Cisco-Packet-Tracer.png" alt="Cisco">
-                  </div>
-              </div>
-
-              <div class="grid-item">
-                  <h5><i class="fas fa-microchip"></i> Computer Systems</h5>
-                  <ul>
-                      <li>Studied computer systems fundamentals</li>
-                      <li>Analyzed assembly code of C programs</li>
-                      <li>CPU, memory, and storage architecture</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png" alt="C">
-                      <img src="./asm.png" alt="Assembly">
-                  </div>
-              </div>
-
-              <div class="grid-item">
-                  <h5><i class="fas fa-project-diagram"></i> Data Structures & Algorithms</h5>
-                  <ul>
-                      <li>Solved problems with recursion, hashing, linked lists</li>
-                      <li>Algorithm efficiency analysis</li>
-                      <li>Advanced OOP concepts</li>
-                  </ul>
-                  <div class="logo-container">
-                      <img src="./java.png" alt="Java">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
-                  </div>
-              </div>
-              <div></div>
-              <div class="grid-item">
-                <h5><i class="fas fa-database"></i> Big Data</h5>
-                <ul>
-                    <li>Distributed computing with Apache Spark</li>
-                    <li>Data cleaning, mining, and transformation</li>
-                    <li>Python notebooks for big data processing</li>
-                    <li>Deployments using Kaggle and Jupyter</li>
-                </ul>
-                <div class="logo-container">
-                    <img src="./spark.png" alt="Apache Spark">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Hadoop_logo.svg/1280px-Hadoop_logo.svg.png" alt="Hadoop">
-                </div>
+          <div class="skills-logos">
+            <div class="skills-logos">
+              <img src="https://swimburger.net/media/ppnn3pcl/azure.png" alt="Azure">
+              <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker" class="logo-top">
+              <img src="./terraform.png" alt="Terraform">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="Bash" class="logo-middle">
+              <img src="./java.png" alt="Java">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-language-pack-logos-icons-1175208.png?f=webp&w=256" alt="HTML5">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="logo-bottom">
+              <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/141_Git_logo_logos-512.png" alt="Git">
             </div>
           </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="Education" class="section">
-          <div class="section-header">
-              <i class="fas fa-university"></i>
-              <h2>Education</h2>
+    <!-- NEW: Experience section with Unisys + BITS CloudReady -->
+    <section id="Experience" class="section">
+      <div class="section-header">
+        <i class="fas fa-user-tie"></i>
+        <h2>Experience</h2>
+      </div>
+      <ul class="experience-list">
+        <li class="experience-item">
+          <!-- Unisys logo (embedded) -->
+          <img
+            class="inline-logo"
+            alt="Unisys logo"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAALQCAYAAABY6rjKAAA...TRUNCATED_FOR_BREVITY..." />
+          <div>
+            <a href="https://www.unisys.com/" target="_blank" rel="noopener">Unisys</a>
+            <div class="pill-note">Early-career cloud engineering work and professional development.</div>
           </div>
-          <ul>
-              <li>
-                  <a href="https://www.wcupa.edu">West Chester University of Pennsylvania</a>
-                  <br /><em>Graduated: May 2025</em>
-              </li>
-              <li>
-                  <a href="https://www.umasd.org">Upper Merion Area High School</a>
-                  <br /><em>Graduated: June 2019</em>
-              </li>
-              <li>
-                  <a href="https://www.codecademy.com/profiles/BrookKassa">Codecademy</a>
-                  <br /><em>Java, Python, HTML, JavaScript</em>
-              </li>
-          </ul>
-      </section>
+        </li>
 
-      <section id="Extracurriculars" class="section">
-          <div class="section-header">
-              <i class="fas fa-users"></i>
-              <h2> Professional and Community Involvement</h2>
+        <li class="experience-item">
+          <!-- Blueport Cargo logo (replace src with your asset path when available) -->
+          <img class="inline-logo" src="./blueport-cargo.png" alt="Blueport Cargo logo">
+          <div>
+            <a href="https://github.com/brook-kassa/BITS-CloudReady-" target="_blank" rel="noopener">BITS CloudReady™</a>
+            <div class="pill-note">Simulated enterprise network for <em>Blueport Cargo</em>: secure VPC patterns, private subnets, IAM, monitoring, and failover.</div>
           </div>
-          <ul>
-              <li>
-                  <a href="https://ramconnect.wcupa.edu/cscclub/home/"
-                  >West Chester University Computer Science Club</a>
-                  <br /><em>Member of the West Chester University CS Club, participated in
-                     tech discussions, projects, and the competitive programming competition each semester.</em>
-              </li>
-              <li>
-                <a href="https://aiskillsfest.event.microsoft.com/?wt.mc_id=aiskillsfest_eventpage_webpage_wwl_learnpromobanner_1"
-                >Microsoft AI Skills Fest 2025</a>
-                <br /><em>Engaged in Microsoft's AI Skills Fest,
-                     exploring AI technologies incl. MS Copilot, Azure AI, and generative AI. Worked on
-                     industry applications in collaborative training sessions.</em>
-              </li>  
-              <li>
-                <a href="https://hibretassociation.org"
-                >Hibret Assocaition</a>
-                <br />Member of the Hibret Association, a registered 501(c)(3) nonprofit that provides 
-                      financial support to Ethiopians in the Philadelphia metro area during
-                      times of death, illness, emergencies, and financial hardship.<em></em>
-               </li>
-          </ul>
-          <div class="certification-images">
-            <a href="https://learn.microsoft.com/en-us/users/17574074/achievements/print/9y83aqfu?tab=tab-other" target="_blank">
-                <img src="https://i.imgur.com/enzBxdo.png" alt="Microsoft AI Skills Fest Badge">
+        </li>
+      </ul>
+    </section>
+
+    <section id="Certifications" class="section">
+      <div class="section-header">
+          <i class="fas fa-certificate"></i>
+          <h2>Certifications</h2>
+      </div>
+      <ul>
+          <li>
+              <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-fundamentals?tab=credentials-tab">Microsoft Certified: Azure Fundamentals</a>
+          </li>
+          <li>
+              <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab&source=docs">Microsoft Certified: Security, Compliance, and Identity Fundamentals</a>
+          </li>
+          <li>
+            <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-administrator?tab=credentials-tab">Microsoft Certified: Azure Administrator Associate</a>
+          </li>
+          <li>
+            <a href="https://www.credly.com/badges/db403701-4443-476a-b475-12596123d44c/public_url">AWS Certified: Cloud Practitioner</a>
+          </li>
+          <li>
+              <a href="https://www.credly.com/badges/59dba859-a4ca-4583-b3a8-94103cb4111b">Cisco Certified Support Technician</a>
+          </li>
+      </ul>
+      <div class="certification-images">
+          <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-fundamentals?tab=credentials-tab" target="_blank">
+              <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Microsoft Azure Fundamentals Certification">
+          </a>
+          <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/security-compliance-and-identity-fundamentals?tab=credentials-tab&source=docs" target="_blank">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg?branch=main" alt="Microsoft Certified: Security, Compliance, and Identity Fundamentals">
+          </a>
+          <a href="https://learn.microsoft.com/en-us/users/17574074/credentials/certification/azure-administrator?tab=credentials-tab" target="_blank">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg?branch=main" alt="Microsoft Azure Administrator Associate">
+          </a>
+          <a href="https://www.credly.com/badges/db403701-4443-476a-b475-12596123d44c/public_url" target="_blank">
+            <img src="./awscp.png" alt="AWS Certified: Cloud Practitioner">
+          </a>
+          <a href="https://www.credly.com/earner/earned/badge/59dba859-a4ca-4583-b3a8-94103cb4111b" target="_blank">
+            <img src="./ccst.png" alt="Cisco Certified Support Technician">
+          </a>
+      </div>
+    </section>
+
+    <section id="Projects" class="section">
+      <div class="section-header">
+          <i class="fas fa-briefcase"></i>
+          <h2>Projects</h2>
+      </div>
+      <ul>
+          <li>
+            <!-- Mirror the BITS CloudReady link in Projects as requested -->
+            <a href="https://github.com/brook-kassa/BITS-CloudReady-" target="_blank" rel="noopener">
+              BITS CloudReady™
             </a>
-            <a href="https://hibretassociation.org" target="_blank">
-              <img src="https://hibretassociation.org/wp-content/uploads/2023/06/logo_icon-hibret.png" alt="Hibret Association">
-            </a>
-              </a>
-            <a href="https://ramconnect.wcupa.edu/cscclub/home/" target="_blank">
-              <img src="./ramclub.png" alt="WCUPA Computer Science Club">
-            </a>
-        </div>
-      </section>
+            &nbsp;<img class="inline-logo" src="./blueport-cargo.png" alt="Blueport Cargo logo">
+            <br /><em>Simulated business network on AWS for a fictional logistics company (Blueport Cargo).</em>
+          </li>
+          <li>
+              <a href="https://github.com/brook-kassa/YegnaNet" target="_blank" rel="noopener">YegnaNet - In Progress</a>
+              <br /><em>Crowdsourced Wi-Fi Hotspot Heatmap</em>
+          </li>
+          <li>
+              <a href="https://github.com/NickResto/CSC468_Project" target="_blank" rel="noopener">Reel Picks - Cloud Computing Project</a>
+              <br /><em>Collaborative movie recommendation web app</em>
+          </li>
+          <li>
+            <a href="https://github.com/brook-kassa/bkazure-resume" target="_blank" rel="noopener">Cloud Resume Challenge</a>
+            <br /><em>Azure-hosted webapp resume</em>
+          </li>
+          <li>
+            <a href="https://www.netacad.com/profile?tab=badges" target="_blank" rel="noopener">Networking Lab Projects</a>
+            <br /><em>Simulated real-world networks in Cisco Packet Tracer with switches, routers, VLANs, and subnets</em>
+            <em>Configure DHCP, DNS, and routing protocols while applying IPv4/IPv6 subnetting strategies</em>
+          </li>
+      </ul>
+    </section>
+
+    <section id="Coursework" class="section">
+      <div class="section-header">
+          <i class="fas fa-graduation-cap"></i>
+          <h2>Relevant Coursework</h2>
+      </div>
+      <div class="grid-container">             
+          <div class="grid-item">
+              <h5><i class="fas fa-cloud"></i> Cloud Computing</h5>
+              <ul>
+                  <li>Developed movie recommendation app</li>
+                  <li>Docker/Docker Compose implementation</li>
+                  <li>Virtualization and containerization</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-3521676-2945120.png" alt="MongoDB Leaf">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
+                  <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker">
+              </div>
+          </div>
+
+          <div class="grid-item">
+              <h5><i class="fas fa-laptop-code"></i> Software Engineering</h5>
+              <ul>
+                  <li>OOP principles and design patterns</li>
+                  <li>Data Structures and Algorithms</li>
+                  <li>Project planning and testing</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="./java.png" alt="Java">
+              </div>
+          </div>
+
+          <div class="grid-item">
+              <h5><i class="fas fa-shield-alt"></i> Cybersecurity</h5>
+              <ul>
+                  <li>Network security fundamentals</li>
+                  <li>Ethical hacking techniques</li>
+                  <li>Firewall configuration</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="Bash">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png" alt="C">
+              </div>
+          </div>
+
+          <div class="grid-item">
+              <h5><i class="fas fa-network-wired"></i> Networking</h5>
+              <ul>
+                  <li>Cisco Packet Tracer</li>
+                  <li>Wireshark packet analysis</li>
+                  <li>Network topologies</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Wireshark_icon_new.png" alt="Wireshark">
+                  <img src="https://hurbad.com/wp-content/uploads/2021/12/Cisco-Packet-Tracer.png" alt="Cisco">
+              </div>
+          </div>
+
+          <div class="grid-item">
+              <h5><i class="fas fa-microchip"></i> Computer Systems</h5>
+              <ul>
+                  <li>Studied computer systems fundamentals</li>
+                  <li>Analyzed assembly code of C programs</li>
+                  <li>CPU, memory, and storage architecture</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png" alt="C">
+                  <img src="./asm.png" alt="Assembly">
+              </div>
+          </div>
+
+          <div class="grid-item">
+              <h5><i class="fas fa-project-diagram"></i> Data Structures & Algorithms</h5>
+              <ul>
+                  <li>Solved problems with recursion, hashing, linked lists</li>
+                  <li>Algorithm efficiency analysis</li>
+                  <li>Advanced OOP concepts</li>
+              </ul>
+              <div class="logo-container">
+                  <img src="./java.png" alt="Java">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
+              </div>
+          </div>
+
+          <div class="grid-item">
+            <h5><i class="fas fa-database"></i> Big Data</h5>
+            <ul>
+                <li>Distributed computing with Apache Spark</li>
+                <li>Data cleaning, mining, and transformation</li>
+                <li>Python notebooks for big data processing</li>
+                <li>Deployments using Kaggle and Jupyter</li>
+            </ul>
+            <div class="logo-container">
+                <img src="./spark.png" alt="Apache Spark">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/935px-Python-logo-notext.svg.png" alt="Python">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Hadoop_logo.svg/1280px-Hadoop_logo.svg.png" alt="Hadoop">
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="Education" class="section">
+      <div class="section-header">
+          <i class="fas fa-university"></i>
+          <h2>Education</h2>
+      </div>
+      <ul>
+          <li>
+              <a href="https://www.wcupa.edu">West Chester University of Pennsylvania</a>
+              <br /><em>Graduated: May 2025</em>
+          </li>
+          <li>
+              <a href="https://www.umasd.org">Upper Merion Area High School</a>
+              <br /><em>Graduated: June 2019</em>
+          </li>
+          <li>
+              <a href="https://www.codecademy.com/profiles/BrookKassa">Codecademy</a>
+              <br /><em>Java, Python, HTML, JavaScript</em>
+          </li>
+      </ul>
+    </section>
+
+    <section id="Extracurriculars" class="section">
+      <div class="section-header">
+          <i class="fas fa-users"></i>
+          <h2>Community Involvement</h2>
+      </div>
+      <ul>
+          <li>
+              <a href="https://ramconnect.wcupa.edu/cscclub/home/" target="_blank" rel="noopener">West Chester University Computer Science Club</a>
+              <br /><em>Member of the West Chester University CS Club; participated in tech discussions, projects, and competitive programming each semester.</em>
+          </li>
+          <li>
+            <a href="https://aiskillsfest.event.microsoft.com/?wt.mc_id=aiskillsfest_eventpage_webpage_wwl_learnpromobanner_1" target="_blank" rel="noopener">Microsoft AI Skills Fest 2025</a>
+            <br /><em>Explored MS Copilot, Azure AI, and generative AI; built small industry-focused exercises during collaborative sessions.</em>
+          </li>  
+          <li>
+            <a href="https://hibretassociation.org" target="_blank" rel="noopener">Hibret Association</a>
+            <br /><em>Member of a registered 501(c)(3) nonprofit providing financial support to Ethiopians in the Philadelphia metro area during hardship.</em>
+          </li>
+      </ul>
+      <div class="certification-images">
+        <a href="https://learn.microsoft.com/en-us/users/17574074/achievements/print/9y83aqfu?tab=tab-other" target="_blank" rel="noopener">
+            <img src="https://i.imgur.com/enzBxdo.png" alt="Microsoft AI Skills Fest Badge">
+        </a>
+        <a href="https://hibretassociation.org" target="_blank" rel="noopener">
+          <img src="https://hibretassociation.org/wp-content/uploads/2023/06/logo_icon-hibret.png" alt="Hibret Association">
+        </a>
+        <a href="https://ramconnect.wcupa.edu/cscclub/home/" target="_blank" rel="noopener">
+          <img src="./ramclub.png" alt="WCUPA Computer Science Club">
+        </a>
+      </div>
+    </section>
   </div>
 
   <script>
@@ -405,20 +449,18 @@
           const email = 'brookassa4@gmail.com';
           navigator.clipboard.writeText(email).then(() => {
               const tooltip = document.querySelector('.tooltip .tooltiptext');
-              tooltip.textContent = 'Copied!';
-              setTimeout(() => {
-                  tooltip.textContent = 'Click to copy';
-              }, 2000);
+              if (tooltip) {
+                  tooltip.textContent = 'Copied!';
+                  setTimeout(() => { tooltip.textContent = 'Click to copy'; }, 2000);
+              }
           });
       }
 
+      // simple local visitor counter
       document.addEventListener('DOMContentLoaded', () => {
-          let count = localStorage.getItem('visitorCount');
-          if (!count) {
-              count = 0;
-          }
+          let count = Number(localStorage.getItem('visitorCount') || 0);
           count++;
-          localStorage.setItem('visitorCount', count);
+          localStorage.setItem('visitorCount', String(count));
           document.getElementById('visitor-counter').textContent = `Visitors: ${count}`;
       });
   </script>

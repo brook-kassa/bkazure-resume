@@ -1,4 +1,4 @@
-Welcome! This is my web app resume attempt of the Cloud Resume Challenge using Microsoft Azure and modern DevOps & frontend technologies. This project leverages infrastructure-as-code, CI/CD pipelines, serverless computing, and static site hosting all in one full-stack cloud application.
+Welcome to Brook Kassa's portofolio. A Microsoft Azure and modern DevOps & frontend technologies. This project leverages infrastructure-as-code, CI/CD pipelines, serverless computing, and static site hosting all in one full-stack cloud application.
 
 Live Site: www.brookkassa.com
 [GitHub Repository](https://github.com/brook-kassa/bkazure-resume)
